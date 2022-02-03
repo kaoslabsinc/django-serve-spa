@@ -1,0 +1,7 @@
+name: django-serve-spa
+version: 0.0.0
+description: Serve SPAs with Django
+
+repo_url: https://github.com/kaoslabsinc/django-serve-spa
+project_url: https://github.com/kaoslabsinc/django-serve-spa
+keywords: django, spa, react, serve
