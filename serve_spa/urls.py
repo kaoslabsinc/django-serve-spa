@@ -18,8 +18,8 @@ class SPAFilenameConverter:
 register_converter(SPAFilenameConverter, 'spa_filename')
 
 urlpatterns = [
-    path('static/<path:resource>/', views.redirect_static),
-    path('<spa_filename:filename>/', views.serve_file),
+    path('static/<path:resource>', views.redirect_static),
+    path('<spa_filename:filename>', views.serve_file),
     path('<path:resource>/', views.serve_file, {'filename': 'index.html'}, name='path'),
     path('', views.serve_file, {'filename': 'index.html'}, name='home'),
 ]
