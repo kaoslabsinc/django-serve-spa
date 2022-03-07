@@ -6,7 +6,7 @@ app_name = 'spa'
 
 
 class SPAFilenameConverter:
-    regex = r'[\w.]+\.(?:json|jpe?g|png|txt|ico)'
+    regex = r'[-\w.]+\.(?:json|jpe?g|png|txt|ico|js|map)'
 
     def to_python(self, value):
         return value
