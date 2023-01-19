@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path, include
 from django.views.generic import RedirectView
+
+from serve_spa import settings as spa_settings
+from serve_spa.utils import get_dont_match_prefix_regex
 
 admin.site.site_header = "serve_spa Example Admin"
 admin.site.site_title = "serve_spa Example Admin"
@@ -25,6 +28,25 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(pattern_name='admin:index')),
 ]
+
+# ---------------------------------------------------------------------------------------------------------------------
+# urls.spa
+
+if settings.SERVE_SPA:
+    spa_path_regex = get_dont_match_prefix_regex(
+        [
+            'admin',
+        ],
+        spa_settings.SPA_URL
+    )
+    urlpatterns += [
+        re_path(spa_path_regex, include('serve_spa.urls')),
+    ]
+
+if spa_settings.SPA_URL:
+    urlpatterns += (
+        path('', RedirectView.as_view(url=settings.SPA_URL)),
+    )
 
 if settings.DEBUG:
     from django.conf.urls.static import static
