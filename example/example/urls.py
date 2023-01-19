@@ -37,13 +37,13 @@ if settings.SERVE_SPA:
         [
             'admin',
         ],
-        spa_settings.SPA_URL
+        settings.SPA_URL
     )
     urlpatterns += [
         re_path(spa_path_regex, include('serve_spa.urls')),
     ]
 
-if spa_settings.SPA_URL:
+if settings.SPA_URL:
     urlpatterns += (
         path('', RedirectView.as_view(url=settings.SPA_URL)),
     )
