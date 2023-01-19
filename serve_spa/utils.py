@@ -16,4 +16,7 @@ def get_dont_match_prefix_regex(dont_match_prefixes: Iterable, match_prefix=''):
     :return: Generated regular expression
     :rtype: str
     """
-    return rf"^(?!{'|'.join(dont_match_prefixes)})^{match_prefix}"
+    re_str = rf"^(?!{'|'.join(dont_match_prefixes)})"
+    if match_prefix:
+        re_str += rf"^{match_prefix}"
+    return re_str
