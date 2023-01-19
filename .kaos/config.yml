@@ -1,5 +1,5 @@
 name: django-serve-spa
-version: 0.1.0-a6
+version: 0.1.0-rc0
 description: Serve SPAs with Django
 
 repo_url: https://github.com/kaoslabsinc/django-serve-spa
