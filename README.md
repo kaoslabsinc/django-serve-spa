@@ -5,7 +5,7 @@ Serve SPAs with Django
 ## Quick start
 
 ```shell
-pip install dj-kaos-spa
+pip install django-serve-spa
 ```
 
 Build your SPA and copy the contents of the build into `SPA_ROOT` (e.g. `path/to/django/spa/`).
@@ -27,14 +27,14 @@ Runserver, and visit `SPA_URL` (`/` by default). Your SPA will show up.
 
 ## Notes
 
-`dj-kaos-spa` is meant to be used for development and isn't recommended for production use. For production, serve the
+`django-serve-spa` is meant to be used for development and isn't recommended for production use. For production, serve the
 SPA on its own using tools like [npm serve](https://www.npmjs.com/package/serve).
 
-`dj-kaos-spa` is mostly tested with create-react-app apps, but in theory should work with any SPA.
+`django-serve-spa` is mostly tested with create-react-app apps, but in theory should work with any SPA.
 
 ## Utility scripts
 
-`dj-kaos-spa` comes bundled with some utility scripts that makes building and copying your SPA project much more
+`django-serve-spa` comes bundled with some utility scripts that makes building and copying your SPA project much more
 convenient.
 
 ### `build-spa`
